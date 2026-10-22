@@ -1,12 +1,16 @@
 # 慢读 · AI 回答易读器
 
-把中文长回答分段阅读，遇到难词停一停，随时回到原文核对。
+慢读是一款面向儿童及有阅读理解困难者的辅助阅读工具，旨在帮助使用者按自己的节奏阅读和核对原文。
 
 **v0.1.0-alpha · MIT · 本机运行 · OpenAI Codex 协助开发**
 
-Read Chinese AI answers at your own pace, with the original text kept visible.
+An assistive reading tool intended for children and people with reading comprehension difficulties. Alpha; suitability has not been validated.
 
-这是早期试用版。解释和例子仍可能出错，复核也可能误拦或漏判。尚未经过实际残障人士或儿童的理解与可用性验证，不据此宣称对特定群体有效。
+目前为 Alpha 试用版，尚未经过儿童及有阅读理解困难使用者的理解与可用性验证，实际适用性仍需验证，不据此宣称对特定群体有效。本项目不提供诊断或治疗功能。解释和例子仍可能出错，复核也可能误拦或漏判。
+
+## 服务对象与试用边界
+
+儿童试用建议由家长或教师陪同，由成人选择材料、配置模型并核对解释。有阅读理解困难的使用者可按个人需要试用，是否合适仍需结合实际理解与操作情况评估。当前版本尚未设计专门的儿童内容筛选机制。
 
 ## 可以做什么
 
