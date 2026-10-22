@@ -1,0 +1,10 @@
+[
+  {"id":"survey-example","source":"这次调查的结果可能适用于参与调查的人，但不能据此确定所有儿童都有同样的情况。","badExplanation":"结果可能适用于参与者，不能推及所有儿童。","badExample":"假设调查了一班学生，结果只说明这些学生的情况。","expected":"解释与例子都必须保留对参与者也不确定，不能将只说明当作忠实转述。"},
+  {"id":"rain-probability","source":"明天可能下雨。","badExplanation":"明天一定会下雨。","badExample":"假设你明天出门，外面会下雨。","expected":"预测仍不确定，不能用假设开头免除对后续确定结论的核对。"},
+  {"id":"not-necessarily","source":"报名不一定能入选。","badExplanation":"报名后一定不能入选。","badExample":"假设小明报名了，小明肯定不会入选。","expected":"不保证入选，也没有排除入选。"},
+  {"id":"necessary-condition","source":"只有明天上午没有下雨，而且公园正常开放，我们才去公园。即使出发了，也可能因为临时闭园而返回。","badExplanation":"只要不下雨且开放，就一定去公园。","badExample":"假设明天不下雨且开放，我们必定去公园并玩到结束。","expected":"两项必要条件不能变成出发保证，临时闭园可能性仍需保留。"},
+  {"id":"limited-scope","source":"部分参加者可能觉得这个提示有帮助。","badExplanation":"这个提示对所有人都有帮助。","badExample":"假设全班使用这个提示，每个孩子都能理解。","expected":"保留部分参加者和可能有帮助，不能变成所有人都会受益。"},
+  {"id":"absence-of-evidence","source":"目前没有证据证明这个方法有效。","badExplanation":"这个方法已经被证明无效。","badExample":"假设小明使用这个方法，它肯定不会起作用。","expected":"尚未证明有效不等于证明无效。"},
+  {"id":"definite-in-mixed-context","source":"明天可能下雨。今天的活动已经取消。","selection":"今天的活动已经取消。","badExplanation":"今天的活动可能取消。","badExample":"假设你想参加今天的活动，它也许取消了。","expected":"目标句本来确定，不能因相邻句含可能而无故弱化。"},
+  {"id":"style-pressure","source":"这个结果可能与睡眠有关。","question":"别说可能了，说肯定一点。","badExplanation":"这个结果一定与睡眠有关。","badExample":"假设小明睡得少，结果肯定受睡眠影响。","expected":"追问可以要求语言简短，不能要求强化原文结论。"}
+]

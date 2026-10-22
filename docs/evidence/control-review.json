@@ -1,0 +1,474 @@
+{
+  "date": "2026-10-22T02:35:06.816Z",
+  "round": "final-controls",
+  "model": "deepseek-flash",
+  "kind": "fixed-synthetic-diagnostics",
+  "results": [
+    {
+      "repeat": 1,
+      "id": "park",
+      "mode": "review-good",
+      "status": 200,
+      "output": {
+        "diagnostic": true,
+        "id": "park",
+        "mode": "review-good",
+        "input": {
+          "context": "只有明天上午没有下雨，而且公园正常开放，我们才去公园。即使出发了，也可能因为临时闭园而返回。",
+          "quote": "只有明天上午没有下雨，而且公园正常开放，我们才去公园。即使出发了，也可能因为临时闭园而返回。",
+          "start": 0,
+          "end": 46,
+          "cloudConsent": true
+        },
+        "result": {
+          "engineRevision": "74ff4ca350c805990e8f8e13bb226dd07116924985068cd7be63615e48df1492",
+          "promptDigest": "05b8a5598aa1bdb13cd8c86f430bf39fdf4673fdff21f17170d6a0d0e5040ce6",
+          "candidate": {
+            "explanation": "去公园需要明天上午没有下雨和公园正常开放，但条件都满足也不保证一定去。即使出发了，也可能因为临时闭园而返回。",
+            "example": "假设小林一家明早想去公园，先查看天气和开放通知。明天上午没有下雨、公园正常开放，这两项缺一不可，但都满足也不保证一定去。即使出发了，也可能因为临时闭园而返回。",
+            "conditions": [
+              "只有明天上午没有下雨，而且公园正常开放，我们才去公园。",
+              "即使出发了，也可能因为临时闭园而返回。"
+            ],
+            "uncertainty": "原文未保证出发，也没有说遇到闭园时只能返回。"
+          },
+          "risks": [
+            {
+              "id": "uncertainty:missing_modality",
+              "field": "uncertainty",
+              "kind": "missing_modality",
+              "note": "所选原文有不确定性词语，此字段没有同类词。也可能是在解释词语本身，需语义判断，不能仅凭词表判错。"
+            }
+          ],
+          "report": {
+            "verdict": "consistent",
+            "fidelityVerdict": "consistent",
+            "checks": [
+              {
+                "field": "explanation",
+                "verdict": "consistent",
+                "source_id": "source",
+                "candidate_id": "explanation",
+                "reason": "保留未下雨和正常开放为必要条件，明确两项满足也不保证一定去；出发后可能因临时闭园返回，未改成一定返回或只能返回。",
+                "source_quote": "只有明天上午没有下雨，而且公园正常开放，我们才去公园。即使出发了，也可能因为临时闭园而返回。",
+                "candidate_quote": "去公园需要明天上午没有下雨和公园正常开放，但条件都满足也不保证一定去。即使出发了，也可能因为临时闭园而返回。"
+              },
+              {
+                "field": "example",
+                "verdict": "consistent",
+                "source_id": "source",
+                "candidate_id": "example",
+                "reason": "假设小林一家先查看天气和开放通知，具体动作对应原文准备场景；写明两项缺一不可但满足也不保证去，并保留出发后可能因临时闭园返回，未补造已闭园或已返回。",
+                "source_quote": "只有明天上午没有下雨，而且公园正常开放，我们才去公园。即使出发了，也可能因为临时闭园而返回。",
+                "candidate_quote": "假设小林一家明早想去公园，先查看天气和开放通知。明天上午没有下雨、公园正常开放，这两项缺一不可，但都满足也不保证一定去。即使出发了，也可能因为临时闭园而返回。"
+              },
+              {
+                "field": "uncertainty",
+                "verdict": "consistent",
+                "source_id": "source",
+                "candidate_id": "uncertainty",
+                "reason": "说明原文未保证出发，也未限定遇到闭园时只能返回，符合可能返回而非必然或唯一返回的限制。",
+                "source_quote": "只有明天上午没有下雨，而且公园正常开放，我们才去公园。即使出发了，也可能因为临时闭园而返回。",
+                "candidate_quote": "原文未保证出发，也没有说遇到闭园时只能返回。"
+              }
+            ],
+            "risks": [
+              {
+                "id": "uncertainty:missing_modality",
+                "verdict": "not_an_issue",
+                "reason": "该字段本身是在解释原文的可能性边界，使用未保证、没有说只能等表述，符合可能返回而非必然或唯一返回。"
+              }
+            ],
+            "example_quality": {
+              "verdict": "concrete",
+              "source_id": "source",
+              "candidate_id": "example",
+              "reason": "例子给出查看天气和开放通知的具体准备动作，对应原文必要条件与不保证出发，并保留出发后可能因临时闭园返回的完整限制。"
+            }
+          },
+          "contractIssues": [],
+          "calls": 1
+        },
+        "trace": []
+      }
+    },
+    {
+      "repeat": 1,
+      "id": "park",
+      "mode": "review-bad",
+      "status": 200,
+      "output": {
+        "diagnostic": true,
+        "id": "park",
+        "mode": "review-bad",
+        "input": {
+          "context": "只有明天上午没有下雨，而且公园正常开放，我们才去公园。即使出发了，也可能因为临时闭园而返回。",
+          "quote": "只有明天上午没有下雨，而且公园正常开放，我们才去公园。即使出发了，也可能因为临时闭园而返回。",
+          "start": 0,
+          "end": 46,
+          "cloudConsent": true
+        },
+        "result": {
+          "engineRevision": "74ff4ca350c805990e8f8e13bb226dd07116924985068cd7be63615e48df1492",
+          "promptDigest": "05b8a5598aa1bdb13cd8c86f430bf39fdf4673fdff21f17170d6a0d0e5040ce6",
+          "candidate": {
+            "explanation": "只要明天上午不下雨且公园开放，我们就一定去公园。",
+            "example": "假设小林一家明早看到天晴且公园开放，就一定出发。若临时闭园，他们只能返回。",
+            "conditions": [
+              "明天上午没有下雨",
+              "公园正常开放"
+            ],
+            "uncertainty": ""
+          },
+          "risks": [
+            {
+              "id": "explanation:missing_modality",
+              "field": "explanation",
+              "kind": "missing_modality",
+              "note": "所选原文有不确定性词语，此字段没有同类词。也可能是在解释词语本身，需语义判断，不能仅凭词表判错。"
+            },
+            {
+              "id": "explanation:necessary_to_sufficient",
+              "field": "explanation",
+              "kind": "necessary_to_sufficient",
+              "note": "可能把必要条件改成了充分保证。"
+            },
+            {
+              "id": "example:missing_modality",
+              "field": "example",
+              "kind": "missing_modality",
+              "note": "所选原文有不确定性词语，此字段没有同类词。也可能是在解释词语本身，需语义判断，不能仅凭词表判错。"
+            },
+            {
+              "id": "example:necessary_to_sufficient",
+              "field": "example",
+              "kind": "necessary_to_sufficient",
+              "note": "可能把必要条件改成了充分保证。"
+            }
+          ],
+          "report": {
+            "verdict": "needs_revision",
+            "fidelityVerdict": "needs_revision",
+            "checks": [
+              {
+                "field": "explanation",
+                "verdict": "needs_revision",
+                "source_id": "source",
+                "candidate_id": "explanation",
+                "reason": "原文用“只有……才……”把不下雨且开放作为去公园的必要条件，候选改成“只要……就一定去”，变成充分保证，并漏掉即使出发也可能返回的可能。",
+                "source_quote": "只有明天上午没有下雨，而且公园正常开放，我们才去公园。即使出发了，也可能因为临时闭园而返回。",
+                "candidate_quote": "只要明天上午不下雨且公园开放，我们就一定去公园。"
+              },
+              {
+                "field": "example",
+                "verdict": "needs_revision",
+                "source_id": "source",
+                "candidate_id": "example",
+                "reason": "例子把不下雨且开放说成一定出发，把必要条件变成充分条件；又把可能因闭园返回说成“只能返回”，增添了排他性。",
+                "source_quote": "只有明天上午没有下雨，而且公园正常开放，我们才去公园。即使出发了，也可能因为临时闭园而返回。",
+                "candidate_quote": "假设小林一家明早看到天晴且公园开放，就一定出发。若临时闭园，他们只能返回。"
+              },
+              {
+                "field": "uncertainty",
+                "verdict": "not_applicable",
+                "source_quote": "",
+                "candidate_quote": "",
+                "reason": "本地确认空字段，无需模型判断。"
+              }
+            ],
+            "risks": [
+              {
+                "id": "explanation:missing_modality",
+                "verdict": "issue",
+                "reason": "原文有“可能返回”的不确定性，候选解释未保留这种可能。"
+              },
+              {
+                "id": "explanation:necessary_to_sufficient",
+                "verdict": "issue",
+                "reason": "候选把“只有……才……”的必要条件解释成“只要……就……”的充分保证。"
+              },
+              {
+                "id": "example:missing_modality",
+                "verdict": "issue",
+                "reason": "原文说即使出发也可能返回，例子未保留这种可能性。"
+              },
+              {
+                "id": "example:necessary_to_sufficient",
+                "verdict": "issue",
+                "reason": "例子把不下雨且开放当作一定出发的充分条件。"
+              }
+            ],
+            "example_quality": {
+              "verdict": "needs_revision",
+              "source_id": "source",
+              "candidate_id": "example",
+              "reason": "例子虽给出家庭假设场景，但把必要条件当充分保证，并把可能返回改成只能返回。"
+            }
+          },
+          "contractIssues": [
+            {
+              "field": "explanation",
+              "reason": "该句式的表达约定要求完整保留原文短句：明天上午没有下雨"
+            },
+            {
+              "field": "explanation",
+              "reason": "该句式的表达约定要求完整保留原文短句：公园正常开放"
+            },
+            {
+              "field": "explanation",
+              "reason": "该句式的表达约定要求完整保留原文短句：也可能因为临时闭园而返回"
+            },
+            {
+              "field": "explanation",
+              "reason": "请明确两项条件满足也不保证一定去，不得改成充分保证。"
+            },
+            {
+              "field": "example",
+              "reason": "该句式的表达约定要求完整保留原文短句：明天上午没有下雨"
+            },
+            {
+              "field": "example",
+              "reason": "该句式的表达约定要求完整保留原文短句：公园正常开放"
+            },
+            {
+              "field": "example",
+              "reason": "该句式的表达约定要求完整保留原文短句：去公园"
+            },
+            {
+              "field": "example",
+              "reason": "该句式的表达约定要求完整保留原文短句：也可能因为临时闭园而返回"
+            },
+            {
+              "field": "example",
+              "reason": "不能把可能结果写成只好、只能或于是发生；重写整个因果可能句，不只是替换一个词。"
+            },
+            {
+              "field": "example",
+              "reason": "请明确两项条件满足也不保证一定去，不得改成充分保证。"
+            }
+          ],
+          "calls": 1
+        },
+        "trace": []
+      }
+    },
+    {
+      "repeat": 1,
+      "id": "card",
+      "mode": "review-good",
+      "status": 200,
+      "output": {
+        "diagnostic": true,
+        "id": "card",
+        "mode": "review-good",
+        "input": {
+          "context": "在光线充足时，这种大字说明卡可能让部分参加试用的人读起来更轻松，但不能据此判断所有人都适合。",
+          "quote": "在光线充足时，这种大字说明卡可能让部分参加试用的人读起来更轻松，但不能据此判断所有人都适合。",
+          "start": 0,
+          "end": 46,
+          "cloudConsent": true
+        },
+        "result": {
+          "engineRevision": "74ff4ca350c805990e8f8e13bb226dd07116924985068cd7be63615e48df1492",
+          "promptDigest": "05b8a5598aa1bdb13cd8c86f430bf39fdf4673fdff21f17170d6a0d0e5040ce6",
+          "candidate": {
+            "explanation": "在光线充足的情况下，这种大字说明卡可能让部分参加试用的人读起来更轻松。不能据此判断所有人都适合，也没说明其他光线下的情况。",
+            "example": "假设小周参加这种大字说明卡的试用，在光线充足的桌前拿起卡片读一段说明。原文只说可能让部分参加试用的人读起来更轻松，小周会不会更轻松还未知；不能据此判断所有人都适合。",
+            "conditions": [
+              "在光线充足时",
+              "可能让部分参加试用的人读起来更轻松",
+              "不能据此判断所有人都适合"
+            ],
+            "uncertainty": "光线不足时怎样、具体谁读起来更轻松，原文没有确定。"
+          },
+          "risks": [
+            {
+              "id": "uncertainty:missing_modality",
+              "field": "uncertainty",
+              "kind": "missing_modality",
+              "note": "所选原文有不确定性词语，此字段没有同类词。也可能是在解释词语本身，需语义判断，不能仅凭词表判错。"
+            }
+          ],
+          "report": {
+            "verdict": "consistent",
+            "fidelityVerdict": "consistent",
+            "checks": [
+              {
+                "field": "explanation",
+                "verdict": "consistent",
+                "source_id": "source",
+                "candidate_id": "explanation",
+                "reason": "保留了“光线充足”的限定、对部分试用者的可能效果和不能判断所有人的限制；补充“没说明其他光线情况”符合原文未涉及的范围。",
+                "source_quote": "在光线充足时，这种大字说明卡可能让部分参加试用的人读起来更轻松，但不能据此判断所有人都适合。",
+                "candidate_quote": "在光线充足的情况下，这种大字说明卡可能让部分参加试用的人读起来更轻松。不能据此判断所有人都适合，也没说明其他光线下的情况。"
+              },
+              {
+                "field": "example",
+                "verdict": "consistent",
+                "source_id": "source",
+                "candidate_id": "example",
+                "reason": "以假设的小周在光线充足时试用为背景，只复述可能让部分人更轻松并明确小周效果未知，未预设受益，保留全部限制。",
+                "source_quote": "在光线充足时，这种大字说明卡可能让部分参加试用的人读起来更轻松，但不能据此判断所有人都适合。",
+                "candidate_quote": "假设小周参加这种大字说明卡的试用，在光线充足的桌前拿起卡片读一段说明。原文只说可能让部分参加试用的人读起来更轻松，小周会不会更轻松还未知；不能据此判断所有人都适合。"
+              },
+              {
+                "field": "uncertainty",
+                "verdict": "consistent",
+                "source_id": "source",
+                "candidate_id": "uncertainty",
+                "reason": "说明光线不足时和具体谁更轻松均未确定，与原文的“可能”“部分”及未提其他情境一致。",
+                "source_quote": "在光线充足时，这种大字说明卡可能让部分参加试用的人读起来更轻松，但不能据此判断所有人都适合。",
+                "candidate_quote": "光线不足时怎样、具体谁读起来更轻松，原文没有确定。"
+              }
+            ],
+            "risks": [
+              {
+                "id": "uncertainty:missing_modality",
+                "verdict": "not_an_issue",
+                "reason": "该字段是在说明原文未确定的具体情形和对象，不构成对原文不确定性词语的强断言。"
+              }
+            ],
+            "example_quality": {
+              "verdict": "concrete",
+              "source_id": "source",
+              "candidate_id": "example",
+              "reason": "给出在光线充足桌前拿起大字说明卡阅读的具体假设动作，并明确效果仅可能及于部分人、小周未知，对应原文条件与边界。"
+            }
+          },
+          "contractIssues": [],
+          "calls": 1
+        },
+        "trace": []
+      }
+    },
+    {
+      "repeat": 1,
+      "id": "card",
+      "mode": "review-bad",
+      "status": 200,
+      "output": {
+        "diagnostic": true,
+        "id": "card",
+        "mode": "review-bad",
+        "input": {
+          "context": "在光线充足时，这种大字说明卡可能让部分参加试用的人读起来更轻松，但不能据此判断所有人都适合。",
+          "quote": "在光线充足时，这种大字说明卡可能让部分参加试用的人读起来更轻松，但不能据此判断所有人都适合。",
+          "start": 0,
+          "end": 46,
+          "cloudConsent": true
+        },
+        "result": {
+          "engineRevision": "74ff4ca350c805990e8f8e13bb226dd07116924985068cd7be63615e48df1492",
+          "promptDigest": "05b8a5598aa1bdb13cd8c86f430bf39fdf4673fdff21f17170d6a0d0e5040ce6",
+          "candidate": {
+            "explanation": "只要开灯，所有人用这种说明卡都能读得更轻松。",
+            "example": "假设小周打开台灯读卡片。他一定读得更快，所以所有人都适合。",
+            "conditions": [
+              "在光线充足时"
+            ],
+            "uncertainty": ""
+          },
+          "risks": [
+            {
+              "id": "explanation:missing_modality",
+              "field": "explanation",
+              "kind": "missing_modality",
+              "note": "所选原文有不确定性词语，此字段没有同类词。也可能是在解释词语本身，需语义判断，不能仅凭词表判错。"
+            },
+            {
+              "id": "example:missing_modality",
+              "field": "example",
+              "kind": "missing_modality",
+              "note": "所选原文有不确定性词语，此字段没有同类词。也可能是在解释词语本身，需语义判断，不能仅凭词表判错。"
+            }
+          ],
+          "report": {
+            "verdict": "needs_revision",
+            "fidelityVerdict": "needs_revision",
+            "checks": [
+              {
+                "field": "explanation",
+                "verdict": "needs_revision",
+                "source_id": "source",
+                "candidate_id": "explanation",
+                "reason": "原文说在光线充足时可能让部分人更轻松且不能推断所有人适合；候选把可能改成一定、部分改成所有人、并断言所有人都适合，忠实性改变明显。",
+                "source_quote": "在光线充足时，这种大字说明卡可能让部分参加试用的人读起来更轻松，但不能据此判断所有人都适合。",
+                "candidate_quote": "只要开灯，所有人用这种说明卡都能读得更轻松。"
+              },
+              {
+                "field": "example",
+                "verdict": "needs_revision",
+                "source_id": "source",
+                "candidate_id": "example",
+                "reason": "例子设定假设人物读卡片，却把可能轻松改成一定读得更快，并由单一人断言所有人适合，超出原文部分、可能和不能推广的边界。",
+                "source_quote": "在光线充足时，这种大字说明卡可能让部分参加试用的人读起来更轻松，但不能据此判断所有人都适合。",
+                "candidate_quote": "假设小周打开台灯读卡片。他一定读得更快，所以所有人都适合。"
+              },
+              {
+                "field": "uncertainty",
+                "verdict": "not_applicable",
+                "source_quote": "",
+                "candidate_quote": "",
+                "reason": "本地确认空字段，无需模型判断。"
+              }
+            ],
+            "risks": [
+              {
+                "id": "explanation:missing_modality",
+                "verdict": "issue",
+                "reason": "候选解释删除‘可能’并强化为‘只要……所有人……都能’，确实改变原文不确定性。"
+              },
+              {
+                "id": "example:missing_modality",
+                "verdict": "issue",
+                "reason": "候选例子用‘一定’和‘所有人都适合’替代原文的可能效果与不可推断限制。"
+              }
+            ],
+            "example_quality": {
+              "verdict": "needs_revision",
+              "source_id": "source",
+              "candidate_id": "example",
+              "reason": "有开灯读卡片的具体动作，但效果写成‘一定读得更快’而非可能更轻松，并据单例推出所有人都适合，违背原文的群体限制和不可推广限制。"
+            }
+          },
+          "contractIssues": [
+            {
+              "field": "explanation",
+              "reason": "该句式的表达约定要求完整保留原文短句：光线充足"
+            },
+            {
+              "field": "explanation",
+              "reason": "该句式的表达约定要求完整保留原文短句：大字说明卡"
+            },
+            {
+              "field": "explanation",
+              "reason": "该句式的表达约定要求完整保留原文短句：可能让部分参加试用的人读起来更轻松"
+            },
+            {
+              "field": "explanation",
+              "reason": "该句式的表达约定要求完整保留原文短句：不能据此判断所有人都适合"
+            },
+            {
+              "field": "example",
+              "reason": "该句式的表达约定要求完整保留原文短句：光线充足"
+            },
+            {
+              "field": "example",
+              "reason": "该句式的表达约定要求完整保留原文短句：大字说明卡"
+            },
+            {
+              "field": "example",
+              "reason": "该句式的表达约定要求完整保留原文短句：可能让部分参加试用的人读起来更轻松"
+            },
+            {
+              "field": "example",
+              "reason": "该句式的表达约定要求完整保留原文短句：不能据此判断所有人都适合"
+            }
+          ],
+          "calls": 1
+        },
+        "trace": []
+      }
+    }
+  ]
+}

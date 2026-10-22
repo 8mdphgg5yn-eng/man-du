@@ -1,0 +1,107 @@
+{
+  "kind": "self-authored-new-variants",
+  "results": [
+    {
+      "id": "library",
+      "input": {
+        "context": "只有周六上午没有下雪，而且图书馆正常开放，我们才去借书。即使出发了，也可能因为临时封路而返回。",
+        "quote": "只有周六上午没有下雪，而且图书馆正常开放，我们才去借书。即使出发了，也可能因为临时封路而返回。",
+        "start": 0,
+        "end": 47,
+        "cloudConsent": true
+      },
+      "status": 200,
+      "output": {
+        "explanation": "按原句，我们去借书需要“周六上午没有下雪”和“图书馆正常开放”同时满足。少一项，就不去借书；两项都满足，也不保证一定去借书。即使出发了，也可能因为临时封路而返回，这是可能发生的情况。",
+        "example": "假设小林出发前打开天气预报，又查看场所的开放通知，逐项核对“周六上午没有下雪”和“图书馆正常开放”。少一项，就不去借书；两项都满足，也不保证一定去借书。即使出发了，也可能因为临时封路而返回；是否真的返回，这里没有确定。",
+        "conditions": [
+          "只有周六上午没有下雪，而且图书馆正常开放，我们才去借书",
+          "即使出发了，也可能因为临时封路而返回"
+        ],
+        "uncertainty": "所选这句话说“也可能因为临时封路而返回”，不是已经返回；是否实际去借书或返回没有确定。",
+        "quote": "只有周六上午没有下雪，而且图书馆正常开放，我们才去借书。即使出发了，也可能因为临时封路而返回。",
+        "start": 0,
+        "end": 47,
+        "model": "deepseek-flash",
+        "fidelity": {
+          "policy": "modality-review-v2",
+          "engineRevision": "78a2d805ae309257441a9843cab6ca33fe3f9b76fa38e6685adaac69115be760",
+          "state": "model_reviewed",
+          "method": "same-model",
+          "checkedFields": [
+            "explanation",
+            "example",
+            "uncertainty"
+          ],
+          "modelReviewedFields": [
+            "explanation",
+            "example",
+            "uncertainty"
+          ],
+          "repairs": 0,
+          "reviewRetries": 0,
+          "calls": 2,
+          "citations": "bound",
+          "examplePolicy": "concrete-examples-v1",
+          "exampleQuality": "concrete",
+          "promptDigest": "05b8a5598aa1bdb13cd8c86f430bf39fdf4673fdff21f17170d6a0d0e5040ce6",
+          "sourceContract": "necessary-and-possible-return",
+          "exampleConstruction": "source-scaffold",
+          "explanationConstruction": "source-scaffold"
+        }
+      }
+    },
+    {
+      "id": "audio",
+      "input": {
+        "context": "在环境安静时，这种语音提示可能让部分参加测试的人更容易找到按钮，但不能据此认定所有人都适用。",
+        "quote": "在环境安静时，这种语音提示可能让部分参加测试的人更容易找到按钮，但不能据此认定所有人都适用。",
+        "start": 0,
+        "end": 46,
+        "cloudConsent": true
+      },
+      "status": 200,
+      "output": {
+        "explanation": "这句话说明：在环境安静时，语音提示可能让部分参加测试的人更容易找到按钮。这只是可能的效果，不保证某位参与者更容易找到按钮；不能据此认定所有人都适用。",
+        "example": "假设小林是参加测试的人中的一位。在环境安静时，他播放一次语音提示，试着寻找按钮。语音提示可能让部分参加测试的人更容易找到按钮，但小林是否更容易找到按钮还不知道；不能据此认定所有人都适用，其他人是否适合也不能由此确定。",
+        "conditions": [
+          "环境安静",
+          "语音提示",
+          "可能让部分参加测试的人更容易找到按钮",
+          "不能据此认定所有人都适用"
+        ],
+        "uncertainty": "所选这句话说“可能让部分参加测试的人更容易找到按钮”，没有说明具体哪些人会更容易找到按钮，也没有说明其他情境下的效果。",
+        "quote": "在环境安静时，这种语音提示可能让部分参加测试的人更容易找到按钮，但不能据此认定所有人都适用。",
+        "start": 0,
+        "end": 46,
+        "model": "deepseek-flash",
+        "fidelity": {
+          "policy": "modality-review-v2",
+          "engineRevision": "78a2d805ae309257441a9843cab6ca33fe3f9b76fa38e6685adaac69115be760",
+          "state": "model_reviewed",
+          "method": "same-model",
+          "checkedFields": [
+            "explanation",
+            "example",
+            "uncertainty"
+          ],
+          "modelReviewedFields": [
+            "explanation",
+            "example",
+            "uncertainty"
+          ],
+          "repairs": 0,
+          "reviewRetries": 0,
+          "calls": 2,
+          "citations": "bound",
+          "examplePolicy": "concrete-examples-v1",
+          "exampleQuality": "concrete",
+          "promptDigest": "05b8a5598aa1bdb13cd8c86f430bf39fdf4673fdff21f17170d6a0d0e5040ce6",
+          "sourceContract": "context-subset-possible-effect",
+          "exampleConstruction": "source-scaffold",
+          "explanationConstruction": "source-scaffold"
+        }
+      }
+    }
+  ]
+}

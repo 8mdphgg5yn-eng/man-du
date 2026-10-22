@@ -1,0 +1,17 @@
+{
+  "name": "man-du",
+  "version": "0.1.0-alpha",
+  "private": true,
+  "description": "慢读：保留原文的中文 AI 回答阅读辅助工具（Alpha）",
+  "license": "MIT",
+  "author": "米冠博",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node server.mjs",
+    "start:deepseek": "node start-deepseek.mjs",
+    "test": "node --test tests/core.test.cjs tests/server.test.mjs tests/deepseek.test.mjs tests/fidelity.test.mjs tests/prompts.test.mjs tests/engine-v2.test.mjs",
+    "check": "node --check core.js && node --check app.js && node --check ai.js && node --check server.mjs && node --check model.mjs && node --check reader-engine.mjs && node --check start-deepseek.mjs"
+  }
+}

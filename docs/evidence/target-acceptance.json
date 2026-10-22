@@ -1,0 +1,762 @@
+{
+  "date": "2026-10-22T02:33:41.364Z",
+  "round": "final-acceptance",
+  "model": "deepseek-flash",
+  "kind": "fixed-synthetic-diagnostics",
+  "results": [
+    {
+      "repeat": 1,
+      "id": "park",
+      "mode": "pipeline",
+      "status": 200,
+      "output": {
+        "diagnostic": true,
+        "id": "park",
+        "mode": "pipeline",
+        "input": {
+          "context": "只有明天上午没有下雨，而且公园正常开放，我们才去公园。即使出发了，也可能因为临时闭园而返回。",
+          "quote": "只有明天上午没有下雨，而且公园正常开放，我们才去公园。即使出发了，也可能因为临时闭园而返回。",
+          "start": 0,
+          "end": 46,
+          "cloudConsent": true
+        },
+        "result": {
+          "explanation": "按原句，我们去公园需要“明天上午没有下雨”和“公园正常开放”同时满足。少一项，就不去公园；两项都满足，也不保证一定去公园。即使出发了，也可能因为临时闭园而返回，这是可能发生的情况。",
+          "example": "假设小林出发前打开天气预报，又查看场所的开放通知，逐项核对“明天上午没有下雨”和“公园正常开放”。少一项，就不去公园；两项都满足，也不保证一定去公园。即使出发了，也可能因为临时闭园而返回；是否真的返回，这里没有确定。",
+          "conditions": [
+            "只有明天上午没有下雨，而且公园正常开放，我们才去公园。",
+            "即使出发了，也可能因为临时闭园而返回。"
+          ],
+          "uncertainty": "所选这句话说“也可能因为临时闭园而返回”，不是已经返回；是否实际去公园或返回没有确定。",
+          "quote": "只有明天上午没有下雨，而且公园正常开放，我们才去公园。即使出发了，也可能因为临时闭园而返回。",
+          "start": 0,
+          "end": 46,
+          "model": "deepseek-flash",
+          "fidelity": {
+            "policy": "modality-review-v2",
+            "engineRevision": "78a2d805ae309257441a9843cab6ca33fe3f9b76fa38e6685adaac69115be760",
+            "state": "model_reviewed",
+            "method": "same-model",
+            "checkedFields": [
+              "explanation",
+              "example",
+              "uncertainty"
+            ],
+            "modelReviewedFields": [
+              "explanation",
+              "example",
+              "uncertainty"
+            ],
+            "repairs": 0,
+            "reviewRetries": 0,
+            "calls": 2,
+            "citations": "bound",
+            "examplePolicy": "concrete-examples-v1",
+            "exampleQuality": "concrete",
+            "promptDigest": "05b8a5598aa1bdb13cd8c86f430bf39fdf4673fdff21f17170d6a0d0e5040ce6",
+            "sourceContract": "necessary-and-possible-return",
+            "exampleConstruction": "source-scaffold",
+            "explanationConstruction": "source-scaffold"
+          }
+        },
+        "trace": [
+          {
+            "stage": "candidate",
+            "calls": 1,
+            "repairs": 0,
+            "reviewRetries": 0,
+            "answer": {
+              "explanation": "按原句，我们去公园需要“明天上午没有下雨”和“公园正常开放”同时满足。少一项，就不去公园；两项都满足，也不保证一定去公园。即使出发了，也可能因为临时闭园而返回，这是可能发生的情况。",
+              "example": "假设小林出发前打开天气预报，又查看场所的开放通知，逐项核对“明天上午没有下雨”和“公园正常开放”。少一项，就不去公园；两项都满足，也不保证一定去公园。即使出发了，也可能因为临时闭园而返回；是否真的返回，这里没有确定。",
+              "conditions": [
+                "只有明天上午没有下雨，而且公园正常开放，我们才去公园。",
+                "即使出发了，也可能因为临时闭园而返回。"
+              ],
+              "uncertainty": "所选这句话说“也可能因为临时闭园而返回”，不是已经返回；是否实际去公园或返回没有确定。"
+            },
+            "exampleConstruction": "source-scaffold",
+            "promptDigest": "05b8a5598aa1bdb13cd8c86f430bf39fdf4673fdff21f17170d6a0d0e5040ce6"
+          },
+          {
+            "stage": "review",
+            "calls": 2,
+            "repairs": 0,
+            "reviewRetries": 0,
+            "report": {
+              "verdict": "consistent",
+              "fidelityVerdict": "consistent",
+              "checks": [
+                {
+                  "field": "explanation",
+                  "verdict": "consistent",
+                  "source_id": "source",
+                  "candidate_id": "explanation",
+                  "reason": "候选复述了两个必要条件同时满足才去公园，少一项就不去，两项满足也不保证一定去；并保留出发后可能因临时闭园返回，未把可能变确定。",
+                  "source_quote": "只有明天上午没有下雨，而且公园正常开放，我们才去公园。即使出发了，也可能因为临时闭园而返回。",
+                  "candidate_quote": "按原句，我们去公园需要“明天上午没有下雨”和“公园正常开放”同时满足。少一项，就不去公园；两项都满足，也不保证一定去公园。即使出发了，也可能因为临时闭园而返回，这是可能发生的情况。"
+                },
+                {
+                  "field": "example",
+                  "verdict": "consistent",
+                  "source_id": "source",
+                  "candidate_id": "example",
+                  "reason": "例子给出了查看天气和开放通知、逐项核对的具体准备动作，对应两项必要条件，并保持少一项不去、两项满足也不保证去及返回结果不确定。",
+                  "source_quote": "只有明天上午没有下雨，而且公园正常开放，我们才去公园。即使出发了，也可能因为临时闭园而返回。",
+                  "candidate_quote": "假设小林出发前打开天气预报，又查看场所的开放通知，逐项核对“明天上午没有下雨”和“公园正常开放”。少一项，就不去公园；两项都满足，也不保证一定去公园。即使出发了，也可能因为临时闭园而返回；是否真的返回，这里没有确定。"
+                },
+                {
+                  "field": "uncertainty",
+                  "verdict": "consistent",
+                  "source_id": "source",
+                  "candidate_id": "uncertainty",
+                  "reason": "候选明确区分“也可能返回”与“已经返回”，并说明是否实际去公园或返回未确定，未把可能说成一定。",
+                  "source_quote": "只有明天上午没有下雨，而且公园正常开放，我们才去公园。即使出发了，也可能因为临时闭园而返回。",
+                  "candidate_quote": "所选这句话说“也可能因为临时闭园而返回”，不是已经返回；是否实际去公园或返回没有确定。"
+                }
+              ],
+              "risks": [],
+              "example_quality": {
+                "verdict": "concrete",
+                "source_id": "source",
+                "candidate_id": "example",
+                "reason": "例子包含打开天气预报、查看开放通知、逐项核对的具体动作，并把具体动作放在出发前假设场景，未预设已闭园或已返回，也未预设受益。"
+              }
+            },
+            "risks": []
+          }
+        ]
+      }
+    },
+    {
+      "repeat": 1,
+      "id": "card",
+      "mode": "pipeline",
+      "status": 200,
+      "output": {
+        "diagnostic": true,
+        "id": "card",
+        "mode": "pipeline",
+        "input": {
+          "context": "在光线充足时，这种大字说明卡可能让部分参加试用的人读起来更轻松，但不能据此判断所有人都适合。",
+          "quote": "在光线充足时，这种大字说明卡可能让部分参加试用的人读起来更轻松，但不能据此判断所有人都适合。",
+          "start": 0,
+          "end": 46,
+          "cloudConsent": true
+        },
+        "result": {
+          "explanation": "这句话说明：在光线充足时，大字说明卡可能让部分参加试用的人读起来更轻松。这只是可能的效果，不保证某位参与者读起来更轻松；不能据此判断所有人都适合。",
+          "example": "假设小林是参加试用的人中的一位。在光线充足时，他拿起一张大字说明卡，读了一句说明。大字说明卡可能让部分参加试用的人读起来更轻松，但小林是否读起来更轻松还不知道；不能据此判断所有人都适合，其他人是否适合也不能由此确定。",
+          "conditions": [
+            "光线充足",
+            "部分参加试用的人",
+            "可能让部分参加试用的人读起来更轻松",
+            "不能据此判断所有人都适合"
+          ],
+          "uncertainty": "所选这句话说“可能让部分参加试用的人读起来更轻松”，没有说明具体哪些人会读起来更轻松，也没有说明其他情境下的效果。",
+          "quote": "在光线充足时，这种大字说明卡可能让部分参加试用的人读起来更轻松，但不能据此判断所有人都适合。",
+          "start": 0,
+          "end": 46,
+          "model": "deepseek-flash",
+          "fidelity": {
+            "policy": "modality-review-v2",
+            "engineRevision": "78a2d805ae309257441a9843cab6ca33fe3f9b76fa38e6685adaac69115be760",
+            "state": "model_reviewed",
+            "method": "same-model",
+            "checkedFields": [
+              "explanation",
+              "example",
+              "uncertainty"
+            ],
+            "modelReviewedFields": [
+              "explanation",
+              "example",
+              "uncertainty"
+            ],
+            "repairs": 0,
+            "reviewRetries": 0,
+            "calls": 2,
+            "citations": "bound",
+            "examplePolicy": "concrete-examples-v1",
+            "exampleQuality": "concrete",
+            "promptDigest": "05b8a5598aa1bdb13cd8c86f430bf39fdf4673fdff21f17170d6a0d0e5040ce6",
+            "sourceContract": "context-subset-possible-effect",
+            "exampleConstruction": "source-scaffold",
+            "explanationConstruction": "source-scaffold"
+          }
+        },
+        "trace": [
+          {
+            "stage": "candidate",
+            "calls": 1,
+            "repairs": 0,
+            "reviewRetries": 0,
+            "answer": {
+              "explanation": "这句话说明：在光线充足时，大字说明卡可能让部分参加试用的人读起来更轻松。这只是可能的效果，不保证某位参与者读起来更轻松；不能据此判断所有人都适合。",
+              "example": "假设小林是参加试用的人中的一位。在光线充足时，他拿起一张大字说明卡，读了一句说明。大字说明卡可能让部分参加试用的人读起来更轻松，但小林是否读起来更轻松还不知道；不能据此判断所有人都适合，其他人是否适合也不能由此确定。",
+              "conditions": [
+                "光线充足",
+                "部分参加试用的人",
+                "可能让部分参加试用的人读起来更轻松",
+                "不能据此判断所有人都适合"
+              ],
+              "uncertainty": "所选这句话说“可能让部分参加试用的人读起来更轻松”，没有说明具体哪些人会读起来更轻松，也没有说明其他情境下的效果。"
+            },
+            "exampleConstruction": "source-scaffold",
+            "promptDigest": "05b8a5598aa1bdb13cd8c86f430bf39fdf4673fdff21f17170d6a0d0e5040ce6"
+          },
+          {
+            "stage": "review",
+            "calls": 2,
+            "repairs": 0,
+            "reviewRetries": 0,
+            "report": {
+              "verdict": "consistent",
+              "fidelityVerdict": "consistent",
+              "checks": [
+                {
+                  "field": "explanation",
+                  "verdict": "consistent",
+                  "source_id": "source",
+                  "candidate_id": "explanation",
+                  "reason": "保留光线充足情境、可能效果、部分试用者与不能推断所有人的限制，未将可能变确定或部分变全部。",
+                  "source_quote": "在光线充足时，这种大字说明卡可能让部分参加试用的人读起来更轻松，但不能据此判断所有人都适合。",
+                  "candidate_quote": "这句话说明：在光线充足时，大字说明卡可能让部分参加试用的人读起来更轻松。这只是可能的效果，不保证某位参与者读起来更轻松；不能据此判断所有人都适合。"
+                },
+                {
+                  "field": "example",
+                  "verdict": "consistent",
+                  "source_id": "source",
+                  "candidate_id": "example",
+                  "reason": "小林作为假设试用者，有拿起卡片读一句的具体动作；保留可能效果且明确其效果未知，未预设受益，并保留不能推断所有人适合。",
+                  "source_quote": "在光线充足时，这种大字说明卡可能让部分参加试用的人读起来更轻松，但不能据此判断所有人都适合。",
+                  "candidate_quote": "假设小林是参加试用的人中的一位。在光线充足时，他拿起一张大字说明卡，读了一句说明。大字说明卡可能让部分参加试用的人读起来更轻松，但小林是否读起来更轻松还不知道；不能据此判断所有人都适合，其他人是否适合也不能由此确定。"
+                },
+                {
+                  "field": "uncertainty",
+                  "verdict": "consistent",
+                  "source_id": "source",
+                  "candidate_id": "uncertainty",
+                  "reason": "说明未具体指明哪些人更轻松及其他情境效果未知，未把未知改成无效或削弱原文可能效果。",
+                  "source_quote": "在光线充足时，这种大字说明卡可能让部分参加试用的人读起来更轻松，但不能据此判断所有人都适合。",
+                  "candidate_quote": "所选这句话说“可能让部分参加试用的人读起来更轻松”，没有说明具体哪些人会读起来更轻松，也没有说明其他情境下的效果。"
+                }
+              ],
+              "risks": [],
+              "example_quality": {
+                "verdict": "concrete",
+                "source_id": "source",
+                "candidate_id": "example",
+                "reason": "提供假设人物在光线充足下拿起大字说明卡并读一句的具体动作，且该效果仍为可能、人物是否更轻松未知，对应原文情境与推断边界。"
+              }
+            },
+            "risks": []
+          }
+        ]
+      }
+    },
+    {
+      "repeat": 2,
+      "id": "park",
+      "mode": "pipeline",
+      "status": 200,
+      "output": {
+        "diagnostic": true,
+        "id": "park",
+        "mode": "pipeline",
+        "input": {
+          "context": "只有明天上午没有下雨，而且公园正常开放，我们才去公园。即使出发了，也可能因为临时闭园而返回。",
+          "quote": "只有明天上午没有下雨，而且公园正常开放，我们才去公园。即使出发了，也可能因为临时闭园而返回。",
+          "start": 0,
+          "end": 46,
+          "cloudConsent": true
+        },
+        "result": {
+          "explanation": "按原句，我们去公园需要“明天上午没有下雨”和“公园正常开放”同时满足。少一项，就不去公园；两项都满足，也不保证一定去公园。即使出发了，也可能因为临时闭园而返回，这是可能发生的情况。",
+          "example": "假设小林出发前打开天气预报，又查看场所的开放通知，逐项核对“明天上午没有下雨”和“公园正常开放”。少一项，就不去公园；两项都满足，也不保证一定去公园。即使出发了，也可能因为临时闭园而返回；是否真的返回，这里没有确定。",
+          "conditions": [
+            "只有明天上午没有下雨，而且公园正常开放，我们才去公园",
+            "明天上午没有下雨",
+            "公园正常开放",
+            "即使出发了，也可能因为临时闭园而返回"
+          ],
+          "uncertainty": "所选这句话说“也可能因为临时闭园而返回”，不是已经返回；是否实际去公园或返回没有确定。",
+          "quote": "只有明天上午没有下雨，而且公园正常开放，我们才去公园。即使出发了，也可能因为临时闭园而返回。",
+          "start": 0,
+          "end": 46,
+          "model": "deepseek-flash",
+          "fidelity": {
+            "policy": "modality-review-v2",
+            "engineRevision": "78a2d805ae309257441a9843cab6ca33fe3f9b76fa38e6685adaac69115be760",
+            "state": "model_reviewed",
+            "method": "same-model",
+            "checkedFields": [
+              "explanation",
+              "example",
+              "uncertainty"
+            ],
+            "modelReviewedFields": [
+              "explanation",
+              "example",
+              "uncertainty"
+            ],
+            "repairs": 0,
+            "reviewRetries": 0,
+            "calls": 2,
+            "citations": "bound",
+            "examplePolicy": "concrete-examples-v1",
+            "exampleQuality": "concrete",
+            "promptDigest": "05b8a5598aa1bdb13cd8c86f430bf39fdf4673fdff21f17170d6a0d0e5040ce6",
+            "sourceContract": "necessary-and-possible-return",
+            "exampleConstruction": "source-scaffold",
+            "explanationConstruction": "source-scaffold"
+          }
+        },
+        "trace": [
+          {
+            "stage": "candidate",
+            "calls": 1,
+            "repairs": 0,
+            "reviewRetries": 0,
+            "answer": {
+              "explanation": "按原句，我们去公园需要“明天上午没有下雨”和“公园正常开放”同时满足。少一项，就不去公园；两项都满足，也不保证一定去公园。即使出发了，也可能因为临时闭园而返回，这是可能发生的情况。",
+              "example": "假设小林出发前打开天气预报，又查看场所的开放通知，逐项核对“明天上午没有下雨”和“公园正常开放”。少一项，就不去公园；两项都满足，也不保证一定去公园。即使出发了，也可能因为临时闭园而返回；是否真的返回，这里没有确定。",
+              "conditions": [
+                "只有明天上午没有下雨，而且公园正常开放，我们才去公园",
+                "明天上午没有下雨",
+                "公园正常开放",
+                "即使出发了，也可能因为临时闭园而返回"
+              ],
+              "uncertainty": "所选这句话说“也可能因为临时闭园而返回”，不是已经返回；是否实际去公园或返回没有确定。"
+            },
+            "exampleConstruction": "source-scaffold",
+            "promptDigest": "05b8a5598aa1bdb13cd8c86f430bf39fdf4673fdff21f17170d6a0d0e5040ce6"
+          },
+          {
+            "stage": "review",
+            "calls": 2,
+            "repairs": 0,
+            "reviewRetries": 0,
+            "report": {
+              "verdict": "consistent",
+              "fidelityVerdict": "consistent",
+              "checks": [
+                {
+                  "field": "explanation",
+                  "verdict": "consistent",
+                  "source_id": "source",
+                  "candidate_id": "explanation",
+                  "reason": "保留两项必要条件同时满足才去，少一项不去、两项满足也不保证去，并仅将临时闭园返回表述为可能。",
+                  "source_quote": "只有明天上午没有下雨，而且公园正常开放，我们才去公园。即使出发了，也可能因为临时闭园而返回。",
+                  "candidate_quote": "按原句，我们去公园需要“明天上午没有下雨”和“公园正常开放”同时满足。少一项，就不去公园；两项都满足，也不保证一定去公园。即使出发了，也可能因为临时闭园而返回，这是可能发生的情况。"
+                },
+                {
+                  "field": "example",
+                  "verdict": "consistent",
+                  "source_id": "source",
+                  "candidate_id": "example",
+                  "reason": "具体准备动作核对天气和开放通知，保持必要条件与不保证前往，并将返回保留为可能而非已发生。",
+                  "source_quote": "只有明天上午没有下雨，而且公园正常开放，我们才去公园。即使出发了，也可能因为临时闭园而返回。",
+                  "candidate_quote": "假设小林出发前打开天气预报，又查看场所的开放通知，逐项核对“明天上午没有下雨”和“公园正常开放”。少一项，就不去公园；两项都满足，也不保证一定去公园。即使出发了，也可能因为临时闭园而返回；是否真的返回，这里没有确定。"
+                },
+                {
+                  "field": "uncertainty",
+                  "verdict": "consistent",
+                  "source_id": "source",
+                  "candidate_id": "uncertainty",
+                  "reason": "明确返回仅为可能，不声称已返回，去园或返回均未确定。",
+                  "source_quote": "只有明天上午没有下雨，而且公园正常开放，我们才去公园。即使出发了，也可能因为临时闭园而返回。",
+                  "candidate_quote": "所选这句话说“也可能因为临时闭园而返回”，不是已经返回；是否实际去公园或返回没有确定。"
+                }
+              ],
+              "risks": [],
+              "example_quality": {
+                "verdict": "concrete",
+                "source_id": "source",
+                "candidate_id": "example",
+                "reason": "例子含出发前查天气和开放通知的具体动作，逐项对应必要条件，并保留可能返回及结果未定。"
+              }
+            },
+            "risks": []
+          }
+        ]
+      }
+    },
+    {
+      "repeat": 2,
+      "id": "card",
+      "mode": "pipeline",
+      "status": 200,
+      "output": {
+        "diagnostic": true,
+        "id": "card",
+        "mode": "pipeline",
+        "input": {
+          "context": "在光线充足时，这种大字说明卡可能让部分参加试用的人读起来更轻松，但不能据此判断所有人都适合。",
+          "quote": "在光线充足时，这种大字说明卡可能让部分参加试用的人读起来更轻松，但不能据此判断所有人都适合。",
+          "start": 0,
+          "end": 46,
+          "cloudConsent": true
+        },
+        "result": {
+          "explanation": "这句话说明：在光线充足时，大字说明卡可能让部分参加试用的人读起来更轻松。这只是可能的效果，不保证某位参与者读起来更轻松；不能据此判断所有人都适合。",
+          "example": "假设小林是参加试用的人中的一位。在光线充足时，他拿起一张大字说明卡，读了一句说明。大字说明卡可能让部分参加试用的人读起来更轻松，但小林是否读起来更轻松还不知道；不能据此判断所有人都适合，其他人是否适合也不能由此确定。",
+          "conditions": [
+            "光线充足",
+            "部分参加试用的人",
+            "可能让部分参加试用的人读起来更轻松",
+            "不能据此判断所有人都适合"
+          ],
+          "uncertainty": "所选这句话说“可能让部分参加试用的人读起来更轻松”，没有说明具体哪些人会读起来更轻松，也没有说明其他情境下的效果。",
+          "quote": "在光线充足时，这种大字说明卡可能让部分参加试用的人读起来更轻松，但不能据此判断所有人都适合。",
+          "start": 0,
+          "end": 46,
+          "model": "deepseek-flash",
+          "fidelity": {
+            "policy": "modality-review-v2",
+            "engineRevision": "78a2d805ae309257441a9843cab6ca33fe3f9b76fa38e6685adaac69115be760",
+            "state": "model_reviewed",
+            "method": "same-model",
+            "checkedFields": [
+              "explanation",
+              "example",
+              "uncertainty"
+            ],
+            "modelReviewedFields": [
+              "explanation",
+              "example",
+              "uncertainty"
+            ],
+            "repairs": 0,
+            "reviewRetries": 0,
+            "calls": 2,
+            "citations": "bound",
+            "examplePolicy": "concrete-examples-v1",
+            "exampleQuality": "concrete",
+            "promptDigest": "05b8a5598aa1bdb13cd8c86f430bf39fdf4673fdff21f17170d6a0d0e5040ce6",
+            "sourceContract": "context-subset-possible-effect",
+            "exampleConstruction": "source-scaffold",
+            "explanationConstruction": "source-scaffold"
+          }
+        },
+        "trace": [
+          {
+            "stage": "candidate",
+            "calls": 1,
+            "repairs": 0,
+            "reviewRetries": 0,
+            "answer": {
+              "explanation": "这句话说明：在光线充足时，大字说明卡可能让部分参加试用的人读起来更轻松。这只是可能的效果，不保证某位参与者读起来更轻松；不能据此判断所有人都适合。",
+              "example": "假设小林是参加试用的人中的一位。在光线充足时，他拿起一张大字说明卡，读了一句说明。大字说明卡可能让部分参加试用的人读起来更轻松，但小林是否读起来更轻松还不知道；不能据此判断所有人都适合，其他人是否适合也不能由此确定。",
+              "conditions": [
+                "光线充足",
+                "部分参加试用的人",
+                "可能让部分参加试用的人读起来更轻松",
+                "不能据此判断所有人都适合"
+              ],
+              "uncertainty": "所选这句话说“可能让部分参加试用的人读起来更轻松”，没有说明具体哪些人会读起来更轻松，也没有说明其他情境下的效果。"
+            },
+            "exampleConstruction": "source-scaffold",
+            "promptDigest": "05b8a5598aa1bdb13cd8c86f430bf39fdf4673fdff21f17170d6a0d0e5040ce6"
+          },
+          {
+            "stage": "review",
+            "calls": 2,
+            "repairs": 0,
+            "reviewRetries": 0,
+            "report": {
+              "verdict": "consistent",
+              "fidelityVerdict": "consistent",
+              "checks": [
+                {
+                  "field": "explanation",
+                  "verdict": "consistent",
+                  "source_id": "source",
+                  "candidate_id": "explanation",
+                  "reason": "保留“在光线充足时”情境、可能让部分试用者更轻松，并保留不能推断所有人都适合的限制，未将可能升级为一定。",
+                  "source_quote": "在光线充足时，这种大字说明卡可能让部分参加试用的人读起来更轻松，但不能据此判断所有人都适合。",
+                  "candidate_quote": "这句话说明：在光线充足时，大字说明卡可能让部分参加试用的人读起来更轻松。这只是可能的效果，不保证某位参与者读起来更轻松；不能据此判断所有人都适合。"
+                },
+                {
+                  "field": "example",
+                  "verdict": "consistent",
+                  "source_id": "source",
+                  "candidate_id": "example",
+                  "reason": "以小林作为假设试用者并加入拿起卡片读一句的具体动作，保留光线充足、部分人可能更轻松、小林效果未知和不能推断所有人适合的限制。",
+                  "source_quote": "在光线充足时，这种大字说明卡可能让部分参加试用的人读起来更轻松，但不能据此判断所有人都适合。",
+                  "candidate_quote": "假设小林是参加试用的人中的一位。在光线充足时，他拿起一张大字说明卡，读了一句说明。大字说明卡可能让部分参加试用的人读起来更轻松，但小林是否读起来更轻松还不知道；不能据此判断所有人都适合，其他人是否适合也不能由此确定。"
+                },
+                {
+                  "field": "uncertainty",
+                  "verdict": "consistent",
+                  "source_id": "source",
+                  "candidate_id": "uncertainty",
+                  "reason": "说明未指出具体哪些人更轻松及其他情境效果，未把未知说成无效或必然。",
+                  "source_quote": "在光线充足时，这种大字说明卡可能让部分参加试用的人读起来更轻松，但不能据此判断所有人都适合。",
+                  "candidate_quote": "所选这句话说“可能让部分参加试用的人读起来更轻松”，没有说明具体哪些人会读起来更轻松，也没有说明其他情境下的效果。"
+                }
+              ],
+              "risks": [],
+              "example_quality": {
+                "verdict": "concrete",
+                "source_id": "source",
+                "candidate_id": "example",
+                "reason": "例子设计成参加试用者在光线充足时拿起大字说明卡读一句，有具体动作并对应该情境；同时明确小林效果未知，不预设受益。"
+              }
+            },
+            "risks": []
+          }
+        ]
+      }
+    },
+    {
+      "repeat": 3,
+      "id": "park",
+      "mode": "pipeline",
+      "status": 200,
+      "output": {
+        "diagnostic": true,
+        "id": "park",
+        "mode": "pipeline",
+        "input": {
+          "context": "只有明天上午没有下雨，而且公园正常开放，我们才去公园。即使出发了，也可能因为临时闭园而返回。",
+          "quote": "只有明天上午没有下雨，而且公园正常开放，我们才去公园。即使出发了，也可能因为临时闭园而返回。",
+          "start": 0,
+          "end": 46,
+          "cloudConsent": true
+        },
+        "result": {
+          "explanation": "按原句，我们去公园需要“明天上午没有下雨”和“公园正常开放”同时满足。少一项，就不去公园；两项都满足，也不保证一定去公园。即使出发了，也可能因为临时闭园而返回，这是可能发生的情况。",
+          "example": "假设小林出发前打开天气预报，又查看场所的开放通知，逐项核对“明天上午没有下雨”和“公园正常开放”。少一项，就不去公园；两项都满足，也不保证一定去公园。即使出发了，也可能因为临时闭园而返回；是否真的返回，这里没有确定。",
+          "conditions": [
+            "只有明天上午没有下雨，而且公园正常开放，我们才去公园",
+            "即使出发了，也可能因为临时闭园而返回"
+          ],
+          "uncertainty": "所选这句话说“也可能因为临时闭园而返回”，不是已经返回；是否实际去公园或返回没有确定。",
+          "quote": "只有明天上午没有下雨，而且公园正常开放，我们才去公园。即使出发了，也可能因为临时闭园而返回。",
+          "start": 0,
+          "end": 46,
+          "model": "deepseek-flash",
+          "fidelity": {
+            "policy": "modality-review-v2",
+            "engineRevision": "78a2d805ae309257441a9843cab6ca33fe3f9b76fa38e6685adaac69115be760",
+            "state": "model_reviewed",
+            "method": "same-model",
+            "checkedFields": [
+              "explanation",
+              "example",
+              "uncertainty"
+            ],
+            "modelReviewedFields": [
+              "explanation",
+              "example",
+              "uncertainty"
+            ],
+            "repairs": 0,
+            "reviewRetries": 0,
+            "calls": 2,
+            "citations": "bound",
+            "examplePolicy": "concrete-examples-v1",
+            "exampleQuality": "concrete",
+            "promptDigest": "05b8a5598aa1bdb13cd8c86f430bf39fdf4673fdff21f17170d6a0d0e5040ce6",
+            "sourceContract": "necessary-and-possible-return",
+            "exampleConstruction": "source-scaffold",
+            "explanationConstruction": "source-scaffold"
+          }
+        },
+        "trace": [
+          {
+            "stage": "candidate",
+            "calls": 1,
+            "repairs": 0,
+            "reviewRetries": 0,
+            "answer": {
+              "explanation": "按原句，我们去公园需要“明天上午没有下雨”和“公园正常开放”同时满足。少一项，就不去公园；两项都满足，也不保证一定去公园。即使出发了，也可能因为临时闭园而返回，这是可能发生的情况。",
+              "example": "假设小林出发前打开天气预报，又查看场所的开放通知，逐项核对“明天上午没有下雨”和“公园正常开放”。少一项，就不去公园；两项都满足，也不保证一定去公园。即使出发了，也可能因为临时闭园而返回；是否真的返回，这里没有确定。",
+              "conditions": [
+                "只有明天上午没有下雨，而且公园正常开放，我们才去公园",
+                "即使出发了，也可能因为临时闭园而返回"
+              ],
+              "uncertainty": "所选这句话说“也可能因为临时闭园而返回”，不是已经返回；是否实际去公园或返回没有确定。"
+            },
+            "exampleConstruction": "source-scaffold",
+            "promptDigest": "05b8a5598aa1bdb13cd8c86f430bf39fdf4673fdff21f17170d6a0d0e5040ce6"
+          },
+          {
+            "stage": "review",
+            "calls": 2,
+            "repairs": 0,
+            "reviewRetries": 0,
+            "report": {
+              "verdict": "consistent",
+              "fidelityVerdict": "consistent",
+              "checks": [
+                {
+                  "field": "explanation",
+                  "verdict": "consistent",
+                  "source_id": "source",
+                  "candidate_id": "explanation",
+                  "reason": "解释保留了两项必要条件同时满足、缺一不去、两者满足也不保证去；并把返回写成可能发生，与原句一致。",
+                  "source_quote": "只有明天上午没有下雨，而且公园正常开放，我们才去公园。即使出发了，也可能因为临时闭园而返回。",
+                  "candidate_quote": "按原句，我们去公园需要“明天上午没有下雨”和“公园正常开放”同时满足。少一项，就不去公园；两项都满足，也不保证一定去公园。即使出发了，也可能因为临时闭园而返回，这是可能发生的情况。"
+                },
+                {
+                  "field": "example",
+                  "verdict": "consistent",
+                  "source_id": "source",
+                  "candidate_id": "example",
+                  "reason": "例子通过查看天气预报和开放通知说明准备与核对动作，保留必要条件及可能返回的不确定性。",
+                  "source_quote": "只有明天上午没有下雨，而且公园正常开放，我们才去公园。即使出发了，也可能因为临时闭园而返回。",
+                  "candidate_quote": "假设小林出发前打开天气预报，又查看场所的开放通知，逐项核对“明天上午没有下雨”和“公园正常开放”。少一项，就不去公园；两项都满足，也不保证一定去公园。即使出发了，也可能因为临时闭园而返回；是否真的返回，这里没有确定。"
+                },
+                {
+                  "field": "uncertainty",
+                  "verdict": "consistent",
+                  "source_id": "source",
+                  "candidate_id": "uncertainty",
+                  "reason": "不确定性说明可能返回不是已经返回，是否实际去公园或返回未定，未改变原意。",
+                  "source_quote": "只有明天上午没有下雨，而且公园正常开放，我们才去公园。即使出发了，也可能因为临时闭园而返回。",
+                  "candidate_quote": "所选这句话说“也可能因为临时闭园而返回”，不是已经返回；是否实际去公园或返回没有确定。"
+                }
+              ],
+              "risks": [],
+              "example_quality": {
+                "verdict": "concrete",
+                "source_id": "source",
+                "candidate_id": "example",
+                "reason": "具体假设小林出发前查看天气预报和开放通知并逐项核对，对应两项必要条件；返回保持可能而非已发生，未补造闭园事实。"
+              }
+            },
+            "risks": []
+          }
+        ]
+      }
+    },
+    {
+      "repeat": 3,
+      "id": "card",
+      "mode": "pipeline",
+      "status": 200,
+      "output": {
+        "diagnostic": true,
+        "id": "card",
+        "mode": "pipeline",
+        "input": {
+          "context": "在光线充足时，这种大字说明卡可能让部分参加试用的人读起来更轻松，但不能据此判断所有人都适合。",
+          "quote": "在光线充足时，这种大字说明卡可能让部分参加试用的人读起来更轻松，但不能据此判断所有人都适合。",
+          "start": 0,
+          "end": 46,
+          "cloudConsent": true
+        },
+        "result": {
+          "explanation": "这句话说明：在光线充足时，大字说明卡可能让部分参加试用的人读起来更轻松。这只是可能的效果，不保证某位参与者读起来更轻松；不能据此判断所有人都适合。",
+          "example": "假设小林是参加试用的人中的一位。在光线充足时，他拿起一张大字说明卡，读了一句说明。大字说明卡可能让部分参加试用的人读起来更轻松，但小林是否读起来更轻松还不知道；不能据此判断所有人都适合，其他人是否适合也不能由此确定。",
+          "conditions": [
+            "光线充足",
+            "部分参加试用的人",
+            "可能让部分参加试用的人读起来更轻松",
+            "不能据此判断所有人都适合"
+          ],
+          "uncertainty": "所选这句话说“可能让部分参加试用的人读起来更轻松”，没有说明具体哪些人会读起来更轻松，也没有说明其他情境下的效果。",
+          "quote": "在光线充足时，这种大字说明卡可能让部分参加试用的人读起来更轻松，但不能据此判断所有人都适合。",
+          "start": 0,
+          "end": 46,
+          "model": "deepseek-flash",
+          "fidelity": {
+            "policy": "modality-review-v2",
+            "engineRevision": "78a2d805ae309257441a9843cab6ca33fe3f9b76fa38e6685adaac69115be760",
+            "state": "model_reviewed",
+            "method": "same-model",
+            "checkedFields": [
+              "explanation",
+              "example",
+              "uncertainty"
+            ],
+            "modelReviewedFields": [
+              "explanation",
+              "example",
+              "uncertainty"
+            ],
+            "repairs": 0,
+            "reviewRetries": 0,
+            "calls": 2,
+            "citations": "bound",
+            "examplePolicy": "concrete-examples-v1",
+            "exampleQuality": "concrete",
+            "promptDigest": "05b8a5598aa1bdb13cd8c86f430bf39fdf4673fdff21f17170d6a0d0e5040ce6",
+            "sourceContract": "context-subset-possible-effect",
+            "exampleConstruction": "source-scaffold",
+            "explanationConstruction": "source-scaffold"
+          }
+        },
+        "trace": [
+          {
+            "stage": "candidate",
+            "calls": 1,
+            "repairs": 0,
+            "reviewRetries": 0,
+            "answer": {
+              "explanation": "这句话说明：在光线充足时，大字说明卡可能让部分参加试用的人读起来更轻松。这只是可能的效果，不保证某位参与者读起来更轻松；不能据此判断所有人都适合。",
+              "example": "假设小林是参加试用的人中的一位。在光线充足时，他拿起一张大字说明卡，读了一句说明。大字说明卡可能让部分参加试用的人读起来更轻松，但小林是否读起来更轻松还不知道；不能据此判断所有人都适合，其他人是否适合也不能由此确定。",
+              "conditions": [
+                "光线充足",
+                "部分参加试用的人",
+                "可能让部分参加试用的人读起来更轻松",
+                "不能据此判断所有人都适合"
+              ],
+              "uncertainty": "所选这句话说“可能让部分参加试用的人读起来更轻松”，没有说明具体哪些人会读起来更轻松，也没有说明其他情境下的效果。"
+            },
+            "exampleConstruction": "source-scaffold",
+            "promptDigest": "05b8a5598aa1bdb13cd8c86f430bf39fdf4673fdff21f17170d6a0d0e5040ce6"
+          },
+          {
+            "stage": "review",
+            "calls": 2,
+            "repairs": 0,
+            "reviewRetries": 0,
+            "report": {
+              "verdict": "consistent",
+              "fidelityVerdict": "consistent",
+              "checks": [
+                {
+                  "field": "explanation",
+                  "verdict": "consistent",
+                  "source_id": "source",
+                  "candidate_id": "explanation",
+                  "reason": "保留了光线充足、试用人群、可能效果及不能推断所有人的边界，未把可能变一定或扩大适用范围。",
+                  "source_quote": "在光线充足时，这种大字说明卡可能让部分参加试用的人读起来更轻松，但不能据此判断所有人都适合。",
+                  "candidate_quote": "这句话说明：在光线充足时，大字说明卡可能让部分参加试用的人读起来更轻松。这只是可能的效果，不保证某位参与者读起来更轻松；不能据此判断所有人都适合。"
+                },
+                {
+                  "field": "example",
+                  "verdict": "consistent",
+                  "source_id": "source",
+                  "candidate_id": "example",
+                  "reason": "以小林为假设试用者并呈现具体拿卡、读说明动作，随后明确其是否更轻松未知，也未推断其他人适合。",
+                  "source_quote": "在光线充足时，这种大字说明卡可能让部分参加试用的人读起来更轻松，但不能据此判断所有人都适合。",
+                  "candidate_quote": "假设小林是参加试用的人中的一位。在光线充足时，他拿起一张大字说明卡，读了一句说明。大字说明卡可能让部分参加试用的人读起来更轻松，但小林是否读起来更轻松还不知道；不能据此判断所有人都适合，其他人是否适合也不能由此确定。"
+                },
+                {
+                  "field": "uncertainty",
+                  "verdict": "consistent",
+                  "source_id": "source",
+                  "candidate_id": "uncertainty",
+                  "reason": "仅说明未指明具体受益者及未说明其他情境效果，没有把未知说成无效或新增必要限制。",
+                  "source_quote": "在光线充足时，这种大字说明卡可能让部分参加试用的人读起来更轻松，但不能据此判断所有人都适合。",
+                  "candidate_quote": "所选这句话说“可能让部分参加试用的人读起来更轻松”，没有说明具体哪些人会读起来更轻松，也没有说明其他情境下的效果。"
+                }
+              ],
+              "risks": [],
+              "example_quality": {
+                "verdict": "concrete",
+                "source_id": "source",
+                "candidate_id": "example",
+                "reason": "例子包含假设人物、光线充足及拿卡阅读的具体动作，并正确保留效果未知和不能推断所有人的限制。"
+              }
+            },
+            "risks": []
+          }
+        ]
+      }
+    }
+  ]
+}
